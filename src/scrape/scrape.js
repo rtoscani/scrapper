@@ -1,15 +1,16 @@
 'use strict';
 
-const stores = require('../config/stores');
-var scrapeUtils = require('../utils/scrapeUtils');
+const scrapeUtils = require('../utils/scrapeUtils');
+const Notification = require('../notification/notification');
+const Stores = require('../../config/config').stores;
 
 module.exports = {
-    scrape: async function (text) {
+    scrape: async (name, text) => {
         console.info('Scrapping stores...');
-        var results = [];
+        let results = [];
 
         // Iterate over the stores to load to scrape their products
-        for (let store of stores) {
+        for (let store of Stores) {
             console.info('Scraping site: ' + store.name);
             
             let result = await scrapeUtils.scrapeSite(text, store)
@@ -20,8 +21,10 @@ module.exports = {
         }
 
         console.log(results);
-        console.info('Scrapping finished. Found ' + results.length + ' products in stock')
+        console.info('Scrapping finished. Found ' + results.length + ' products in stock');
+
+        Notification.notify(name, results);
 
         return results;
-    }
+    },
 }
