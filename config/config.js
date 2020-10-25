@@ -31,9 +31,6 @@ module.exports = {
                 isAlwaysAvailable: false,
                 isNotAvailableText: "sin stock",
             },
-            paginatorParameters: {
-                hasPaginator: false,
-            },
             selectorParameters: {
                 product: ".products__wrap",
                 name: ".products__name",
@@ -51,9 +48,6 @@ module.exports = {
                 searchUrl: "/tienda/?busqueda={0}",
                 isAlwaysAvailable: false,
                 isNotAvailableText: "sin stock",
-            },
-            paginatorParameters: {
-                hasPaginator: false,
             },
             selectorParameters: {
                 product: ".product",
@@ -73,15 +67,28 @@ module.exports = {
                 isAlwaysAvailable: false,
                 isNotAvailableText: "SIN STOCK",
             },
-            paginatorParameters: {
-                hasPaginator: false,
-            },
             selectorParameters: {
                 product: ".product-box",
                 name: ".product-box-title",
                 price: ".current-price",
                 availability: ".label-no-stock",
                 link: ".product-box-overlay",
+                linkElement: "href",
+            }
+        },
+        {
+            name: "Maximus",
+            enabled: true,
+            siteParameters: {
+                baseUrl: "https://www.maximus.com.ar",
+                searchUrl: "/ARTICULOS/m=0/OR=1/BUS={0};/maximus.aspx",
+                isAlwaysAvailable: true,
+            },
+            selectorParameters: {
+                product: ".product",
+                name: ".titprod",
+                price: ".price",
+                link: ".titprod",
                 linkElement: "href",
             }
         },

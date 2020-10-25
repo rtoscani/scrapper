@@ -17,11 +17,11 @@ const req = request.defaults({
  * @param {int} pageNumber 
  */
 function getUrl (search, parameters, pageNumber) {
-    if (!parameters.paginatorParameters.hasPaginator) {
-        return parameters.siteParameters.baseUrl + String.format(parameters.siteParameters.searchUrl, search);
+    if (parameters.paginatorParameters && parameters.paginatorParameters.hasPaginator) {
+        return parameters.siteParameters.baseUrl + String.format(parameters.siteParameters.searchUrl, search, pageNumber);
     }
 
-    return parameters.siteParameters.baseUrl + String.format(parameters.siteParameters.searchUrl, search, pageNumber);
+    return parameters.siteParameters.baseUrl + String.format(parameters.siteParameters.searchUrl, search);
 }
 
 /**
@@ -84,7 +84,7 @@ function scrapeSite (search, parameters, products, pageNumber) {
                 // Load the html
                 let $ = cheerio.load(html);
 
-                let pages = getMaxPageQuantity($, parameters.paginatorParameters, pageNumber);
+                let pages = parameters.paginatorParameters ? getMaxPageQuantity($, parameters.paginatorParameters, pageNumber) : 1;
 
                 // Find all the products
                 $(parameters.selectorParameters.product).each(function () {
