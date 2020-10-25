@@ -4,10 +4,12 @@ module.exports = {
         {
             name: "RTX 3080",
             text: "rtx 3080",
+            shouldContain: ".*rtx.*3080.*",
         },
         {
             name: "RTX 3070",
             text: "rtx 3070",
+            shouldContain: ".*rtx.*3070.*",
         },
     ],
     notification: {

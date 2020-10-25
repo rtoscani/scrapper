@@ -74,7 +74,7 @@ function scrapeSite (search, parameters, products, pageNumber) {
     
     const options = {
         url: url,
-        timeout: 5000
+        timeout: 10000
     };
 
     return new Promise(function (resolve, reject) {

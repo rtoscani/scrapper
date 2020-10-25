@@ -8,7 +8,7 @@ const cron = new CronJob(Config.cron.pattern, async function() {
     for (let search of Config.searchs) {
         console.info('Searching for: ' + search.name);
 
-        await Scrape.scrape(search.name, search.text);
+        await Scrape.scrape(search);
     }
   }, null, true);
 
