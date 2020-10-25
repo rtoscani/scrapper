@@ -15,7 +15,10 @@ module.exports = {
             
             let result = await scrapeUtils.scrapeSite(search.text, store)
                 .then(response => { return response; })
-                .catch(err => { console.error("Unable to scrape site: " + err); });
+                .catch(err => { 
+                    console.error("Unable to scrape site: " + err);
+                    return [];
+                });
 
             // Filter products using the regex
             for (let product of result) {
