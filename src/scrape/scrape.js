@@ -10,8 +10,8 @@ module.exports = {
         let results = [];
 
         // Iterate over the stores to load to scrape their products
-        for (let store of Stores) {
-            console.info('Scraping site: ' + store.name);
+        for (let store of Stores.filter(store => store.enabled)) {
+            console.info('Scrapping site: ' + store.name);
             
             let result = await scrapeUtils.scrapeSite(text, store)
                 .then(response => { return response; })

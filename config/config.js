@@ -22,6 +22,7 @@ module.exports = {
     stores: [
         {
             name: "Compragamer",
+            enabled: true,
             siteParameters: {
                 baseUrl: "https://compragamer.com",
                 searchUrl: "/index.php?criterio={0}&x=0&y=0&seccion=3&nro_max=50",
@@ -35,7 +36,6 @@ module.exports = {
                 product: ".products__wrap",
                 name: ".products__name",
                 price: ".products__price-new",
-                offerPrice: null,
                 availability: ".products-btns__add",
                 link: ".products__name a",
                 linkElement: "href",
@@ -43,8 +43,9 @@ module.exports = {
         },
         {
             name: "Gezatek",
+            enabled: true,
             siteParameters: {
-                baseUrl: "https://www.gezatek.com.ar/",
+                baseUrl: "https://www.gezatek.com.ar",
                 searchUrl: "/tienda/?busqueda={0}",
                 isAlwaysAvailable: false,
                 isNotAvailableText: "sin stock",
@@ -56,11 +57,31 @@ module.exports = {
                 product: ".product",
                 name: "h2 a",
                 price: ".w-footer .precio_web",
-                offerPrice: null,
                 availability: ".no_hay_stock",
                 link: "h2 a",
                 linkElement: "href",
             }
-        }
+        },
+        {
+            name: "Venex",
+            enabled: true,
+            siteParameters: {
+                baseUrl: "https://www.venex.com.ar",
+                searchUrl: "/resultado-busqueda.htm?keywords={0}",
+                isAlwaysAvailable: false,
+                isNotAvailableText: "SIN STOCK",
+            },
+            paginatorParameters: {
+                hasPaginator: false,
+            },
+            selectorParameters: {
+                product: ".product-box",
+                name: ".product-box-title",
+                price: ".current-price",
+                availability: ".label-no-stock",
+                link: ".product-box-overlay",
+                linkElement: "href",
+            }
+        },
     ]
 }
