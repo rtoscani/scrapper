@@ -92,5 +92,40 @@ module.exports = {
                 linkElement: "href",
             }
         },
+        {
+            name: "Exxa",
+            enabled: true,
+            siteParameters: {
+                baseUrl: "https://exxa.com.ar",
+                searchUrl: "/search/?q={0}",
+                isAlwaysAvailable: false,
+                isNotAvailableText: "SIN STOCK",
+            },
+            selectorParameters: {
+                product: ".product-item",
+                name: ".title h3",
+                price: "#price_display",
+                availability: ".out-of-stock p",
+                link: ".title h3 a",
+                linkElement: "href",
+            }
+        },
+        {
+            name: "Mexx",
+            enabled: true,
+            siteParameters: {
+                baseUrl: "https://www.mexx.com.ar",
+                searchUrl: "/buscar/?p={0}",
+                isAlwaysAvailable: true,
+                isNotAvailableText: "SIN STOCK",
+            },
+            selectorParameters: {
+                product: ".card-ecommerce",
+                name: ".card-title",
+                price: ".price h4 b",
+                link: ".card-title a",
+                linkElement: "href",
+            }
+        },
     ]
 }
