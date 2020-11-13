@@ -2,14 +2,22 @@
 module.exports = {
     searchs: [
         {
+            name: "RTX 3090",
+            text: "rtx 3090",
+            shouldContain: ".*rtx.*3090.*",
+            webhookUrl: "",
+        },
+        {
             name: "RTX 3080",
             text: "rtx 3080",
             shouldContain: ".*rtx.*3080.*",
+            webhookUrl: "",
         },
         {
             name: "RTX 3070",
             text: "rtx 3070",
             shouldContain: ".*rtx.*3070.*",
+            webhookUrl: "",
         },
     ],
     notification: {

@@ -38,7 +38,7 @@ module.exports = {
         console.log(results);
         console.info('Scrapping finished. Found ' + results.length + ' products in stock');
 
-        Notification.notify(search.name, results);
+        Notification.notify(search.name, results, search.webhookUrl);
 
         return results;
     },
