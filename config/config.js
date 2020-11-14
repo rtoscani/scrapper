@@ -49,6 +49,22 @@ module.exports = {
             }
         },
         {
+            name: "Compugarden",
+            enabled: true,
+            siteParameters: {
+                baseUrl: "https://www.compugarden.com.ar",
+                searchUrl: "/ARTICULOS/Placas-de-Video-Nvidia/CAT_ID=48/SCAT_ID=3908/SCA_ID=-1/m=0/BUS=/compugarden.aspx",
+                isAlwaysAvailable: true
+            },
+            selectorParameters: {
+                product: ".col-md-prod",
+                name: ".product .description h4 a",
+                price: ".product .price",
+                link: ".product .description h4 a",
+                linkElement: "href"
+            }
+        },
+        {
             name: "Gezatek",
             enabled: true,
             siteParameters: {
