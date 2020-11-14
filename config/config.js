@@ -53,7 +53,7 @@ module.exports = {
             enabled: true,
             siteParameters: {
                 baseUrl: "https://www.compugarden.com.ar",
-                searchUrl: "/ARTICULOS/Placas-de-Video-Nvidia/CAT_ID=48/SCAT_ID=3908/SCA_ID=-1/m=0/BUS=/compugarden.aspx",
+                searchUrl: "/ARTICULOS/m=0/BUS={0};/compugarden.aspx",
                 isAlwaysAvailable: true
             },
             selectorParameters: {
