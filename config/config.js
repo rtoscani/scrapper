@@ -49,6 +49,22 @@ module.exports = {
             }
         },
         {
+            name: "Compugarden",
+            enabled: true,
+            siteParameters: {
+                baseUrl: "https://www.compugarden.com.ar",
+                searchUrl: "/ARTICULOS/m=0/BUS={0};/compugarden.aspx",
+                isAlwaysAvailable: true
+            },
+            selectorParameters: {
+                product: ".col-md-prod",
+                name: ".product .description h4 a",
+                price: ".product .price",
+                link: ".product .description h4 a",
+                linkElement: "href"
+            }
+        },
+        {
             name: "Gezatek",
             enabled: true,
             siteParameters: {
