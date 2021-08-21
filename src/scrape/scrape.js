@@ -29,6 +29,9 @@ module.exports = {
                 for (let product of products) {
                     let regex = new RegExp(search.shouldContain, "i");
                     if (regex.test(product.name)) {
+                        if (search.maxPrice && product.price > search.maxPrice) {
+                            continue;
+                        }
                         results.push(product);
                     }
                 }
